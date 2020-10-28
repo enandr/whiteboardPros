@@ -12,6 +12,8 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { FooterComponent } from './Theme/footer/footer.component';
 import { TableModule } from 'primeng/table';
+import { MenubarModule } from 'primeng/menubar';
+import { HeaderComponent } from './Theme/header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { TableModule } from 'primeng/table';
     HomeComponent,
     PageNotFoundComponent,
     FooterComponent,
-    WhiteboardProblemsComponent
+    WhiteboardProblemsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { TableModule } from 'primeng/table';
     //primeng
     ButtonModule,
     CardModule,
-    TableModule
+    TableModule,
+    MenubarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
