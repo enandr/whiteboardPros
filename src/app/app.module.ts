@@ -14,6 +14,12 @@ import { FooterComponent } from './Theme/footer/footer.component';
 import { TableModule } from 'primeng/table';
 import { MenubarModule } from 'primeng/menubar';
 import { HeaderComponent } from './Theme/header/header.component';
+import { LoginComponent } from './Pages/login/login.component';
+import { SignUpComponent } from './Pages/sign-up/sign-up.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { ResourcesComponent } from './Pages/resources/resources.component';
+
 
 @NgModule({
   declarations: [
@@ -22,16 +28,21 @@ import { HeaderComponent } from './Theme/header/header.component';
     PageNotFoundComponent,
     FooterComponent,
     WhiteboardProblemsComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent,
+    SignUpComponent,
+    ResourcesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //primeng
+    // primeng
     ButtonModule,
     CardModule,
     TableModule,
-    MenubarModule
+    MenubarModule,
+    InputTextModule,
+    PasswordModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

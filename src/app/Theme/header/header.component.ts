@@ -24,12 +24,12 @@ export class HeaderComponent implements OnInit {
       },
       {
         label: 'Interviews',
-        routerLink: ['/']
+        routerLink: ['/interviews']
       }
       ,
       {
         label: 'Resources',
-        routerLink: ['/']
+        routerLink: ['/resources']
       }
     ];
   }
