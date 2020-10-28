@@ -1,0 +1,22 @@
+<div class="container">
+  <p-table [value]="questionList">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Difficulty</th>
+        <th>Catagory</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-question>
+      <tr>
+        <td>{{question.id}}</td>
+        <td>{{question.name}}</td>
+        <td>{{question.type}}</td>
+        <td>{{question.difficulty}}</td>
+        <td>{{question.catagory}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
