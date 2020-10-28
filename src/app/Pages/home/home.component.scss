@@ -1,0 +1,51 @@
+.white-text {
+  font-family: 'Grandstander', cursive;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+* {
+  font-family: 'Grandstander', cursive;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.sub-title{
+  font-size: 2rem;
+}
+
+.home-bg{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.0)), url('../../../assets/images/whiteboard-with-falling-markers.jpg');
+  height: 100%;
+}
+
+.parallax{
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-whiteboard{
+  background-color: #f7f7f7;
+}
+
+::ng-deep.card-height{
+  min-height: 600px;
+}
+
+::ng-deep.p-card-body, .p-card-content{
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .title{
+    font-size: 2.5rem;
+  }
+  .sub-title{
+    font-size: 1rem;
+  }
+}
