@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  items: MenuItem[];
+
+  constructor() {
+    this.items = [
+      /* {
+        label: 'Home',
+        icon: '',
+        routerLink: ['/']
+      }, */
+      {
+        label: 'BECOME A WIZARD',
+        routerLink: ['/whiteboard/problems']
+      },
+      {
+        label: 'ABOUT',
+        routerLink: ['/about']
+      }
+      ,
+      {
+        label: 'OUR SEVICES',
+        routerLink: ['/resources']
+      }
+    ];
+  }
 
   ngOnInit(): void {
   }

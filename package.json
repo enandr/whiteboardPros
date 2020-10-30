@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ng serve",
-    "build": "ng build --prod"
+    "build-prod": "ng build --prod",
+    "s3-sync": "aws s3 sync /Users/rogerenand/.bitnami/stackman/machines/xampp/volumes/root/htdocs/server/whiteboard-wizards/dist/whiteboard-wizards s3://www.whiteboardpros.com"
   },
   "private": true,
   "dependencies": {

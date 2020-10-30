@@ -1,20 +1,33 @@
 .white-text {
-  font-family: 'Grandstander', cursive;
   color: white;
   text-shadow: 1px 1px 1px black;
 }
-
+.blue-text{
+  color: #3E6076;
+  text-shadow: 1px 1px 1px black;
+}
+::ng-deep.blue-text-menu{
+  color: rgb(24, 26, 92);
+  text-shadow: 1px 1px 1px black;
+}
+.bg-transparent{
+  background-color: transparent;
+  border: 0;
+}
+::ng-deep.p-menubar{
+  border: none;
+}
 * {
   font-family: 'Grandstander', cursive;
 }
 
 .title {
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 .sub-title{
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 
 .home-bg{
@@ -41,11 +54,21 @@
   height: 100%;
 }
 
+.home-image{
+  height: 600px;
+  width: auto;
+  max-width: 100%;
+  max-height: auto;
+  border: none !important;
+}
 @media only screen and (max-width: 600px) {
   .title{
     font-size: 2.5rem;
   }
   .sub-title{
     font-size: 1rem;
+  }
+  .hide-on-sm{
+    display: none;
   }
 }

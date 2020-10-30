@@ -14,9 +14,14 @@ export class HeaderComponent implements OnInit {
 
     this.items = [
       {
-        label: 'Home',
+        label: 'Whiteboard Wizards',
         icon: '',
         routerLink: ['/']
+      },
+      {
+        label: 'Home',
+        icon: '',
+        routerLink: ['/home']
       },
       {
         label: 'Whiteboards',
@@ -25,12 +30,38 @@ export class HeaderComponent implements OnInit {
       {
         label: 'Interviews',
         routerLink: ['/interviews']
-      }
-      ,
+      },
       {
         label: 'Resources',
-        routerLink: ['/resources']
-      }
+        routerLink: ['/resources'],
+        items: [{
+          label: 'Coding',
+          // icon: 'pi pi-fw pi-plus',
+          items: [
+            { label: 'JavaScript' },
+            { label: 'TypeScript' },
+            { label: 'React' },
+            { label: 'Angular' },
+            // { label: 'TypeScript' },
+            // { label: 'TypeScript' },
+            // { label: 'TypeScript' },
+          ]
+          },
+          {
+            label: 'Styling',
+            // icon: 'pi pi-fw pi-plus',
+            items: [
+              { label: 'CSS3' },
+              { label: 'SCSS' },
+              { label: 'Bootstrap' },
+              { label: 'Material' },
+            ]
+          }
+        ]
+      }, {
+        label: 'Our Great Wizards',
+        routerLink: ['/greatwizards']
+      },
     ];
   }
 
