@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-not-found.component.scss']
 })
 export class PageNotFoundComponent implements OnInit {
-
-  constructor() { }
+  themeColor: string;
+  constructor() {
+    this.themeColor = sessionStorage.getItem('current-theme');
+  }
 
   ngOnInit(): void {
+  }
+
+  setTheme(theme): void {
+    console.log(theme);
+    if (this.themeColor !== theme) {
+      this.themeColor = theme;
+      sessionStorage.setItem('current-theme', theme);
+    }
   }
 
 }

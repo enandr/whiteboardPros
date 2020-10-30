@@ -1,15 +1,4 @@
-.white-text {
-  color: white;
-  text-shadow: 1px 1px 1px black;
-}
-.blue-text{
-  color: #3E6076;
-  text-shadow: 1px 1px 1px black;
-}
-::ng-deep.blue-text-menu{
-  color: rgb(24, 26, 92);
-  text-shadow: 1px 1px 1px black;
-}
+
 .bg-transparent{
   background-color: transparent;
   border: 0;
@@ -42,33 +31,66 @@
   background-size: cover;
 }
 
-.bg-whiteboard{
-  background-color: #f7f7f7;
+.br{
+  border-right: 1px solid black;
 }
 
-::ng-deep.card-height{
-  min-height: 600px;
+.select-wizard{
+  font-size: 4rem;
 }
 
-::ng-deep.p-card-body, .p-card-content{
-  height: 100%;
+.wizard-link{
+  text-decoration: none;
+  color: initial;
+  :hover{
+    color: rgb(99, 99, 99);
+  }
+  :visited{
+    color: initial;
+  }
+  :active{
+  color: initial;
+  }
 }
 
-.home-image{
-  height: 600px;
-  width: auto;
-  max-width: 100%;
-  max-height: auto;
-  border: none !important;
+.clickable{
+  cursor: pointer;
 }
+.scale-hover{
+  transition: transform .2s ease-in-out;
+  display: inline-block;
+}
+.scale-hover:hover{
+  transform: scale(1.1);
+}
+.dark-theme{
+  transition: all .15s ease-in-out;
+  .br{
+    border-color: white;
+  }
+}
+.light-theme{
+  transition: all .15s ease-in-out;
+  .br{
+    border-color: black;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .title{
-    font-size: 2.5rem;
+    font-size: 1.75rem;
   }
   .sub-title{
     font-size: 1rem;
   }
   .hide-on-sm{
     display: none;
+  }
+  .select-wizard{
+    font-size: 3rem;
+  }
+  .br{
+    border-right: 0;
+    border-bottom: 1px solid;
   }
 }

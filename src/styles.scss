@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+.dark-theme{
+  transition: all .15s ease-in-out;
+  color:white;
+  background-color: black;
+  .br{
+    border-color: white;
+  }
+}
+.light-theme{
+  transition: all .15s ease-in-out;
+  color: black;
+  background-color: white;
+  .br{
+    border-color: black;
+  }
+}
