@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +8,6 @@ import { MenuItem } from 'primeng/api';
 })
 export class HomeComponent implements OnInit {
 
-  items: MenuItem[];
   themeColor = 'light-theme light-theme-primeng';
 
   constructor(private router: Router) {
@@ -17,27 +15,6 @@ export class HomeComponent implements OnInit {
     if (savedTheme){
       this.themeColor = savedTheme;
     }
-
-    this.items = [
-      /* {
-        label: 'Home',
-        icon: '',
-        routerLink: ['/']
-      }, */
-      {
-        label: 'BECOME A WIZARD',
-        routerLink: ['/whiteboard/problems']
-      },
-      {
-        label: 'ABOUT',
-        routerLink: ['/about']
-      }
-      ,
-      {
-        label: 'OUR SEVICES',
-        routerLink: ['/resources']
-      }
-    ];
   }
 
   ngOnInit(): void {

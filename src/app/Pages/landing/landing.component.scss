@@ -1,0 +1,96 @@
+
+.bg-transparent{
+  background-color: transparent;
+  border: 0;
+}
+::ng-deep.p-menubar{
+  border: none;
+}
+* {
+  font-family: 'Grandstander', cursive;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.sub-title{
+  font-size: 1.25rem;
+}
+
+.home-bg{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.0)), url('../../../assets/images/whiteboard-with-falling-markers.jpg');
+  height: 100%;
+}
+
+.parallax{
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.br{
+  border-right: 1px solid black;
+}
+
+.select-wizard{
+  font-size: 4rem;
+}
+
+.wizard-link{
+  text-decoration: none;
+  color: initial;
+  :hover{
+    color: rgb(99, 99, 99);
+  }
+  :visited{
+    color: initial;
+  }
+  :active{
+  color: initial;
+  }
+}
+
+.clickable{
+  cursor: pointer;
+}
+.scale-hover{
+  transition: transform .2s ease-in-out;
+  display: inline-block;
+}
+.scale-hover:hover{
+  transform: scale(1.1);
+}
+.dark-theme{
+  transition: all .15s ease-in-out;
+  .br{
+    border-color: white;
+  }
+}
+.light-theme{
+  transition: all .15s ease-in-out;
+  .br{
+    border-color: black;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .title{
+    font-size: 1.75rem;
+  }
+  .sub-title{
+    font-size: 1rem;
+  }
+  .hide-on-sm{
+    display: none;
+  }
+  .select-wizard{
+    font-size: 3rem;
+  }
+  .br{
+    border-right: 0;
+    border-bottom: 1px solid;
+  }
+}

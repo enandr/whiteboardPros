@@ -19,6 +19,7 @@ import { SignUpComponent } from './Pages/sign-up/sign-up.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ResourcesComponent } from './Pages/resources/resources.component';
+import { LandingComponent } from './Pages/landing/landing.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ResourcesComponent } from './Pages/resources/resources.component';
     HeaderComponent,
     LoginComponent,
     SignUpComponent,
-    ResourcesComponent
+    ResourcesComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
