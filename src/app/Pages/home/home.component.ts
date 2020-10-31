@@ -10,7 +10,7 @@ import { MenuItem } from 'primeng/api';
 export class HomeComponent implements OnInit {
 
   items: MenuItem[];
-  themeColor = 'light-theme';
+  themeColor = 'light-theme light-theme-primeng';
 
   constructor(private router: Router) {
     const savedTheme = sessionStorage.getItem('current-theme');
@@ -48,7 +48,6 @@ export class HomeComponent implements OnInit {
   }
 
   setTheme(theme): void {
-    console.log(theme);
     if (this.themeColor !== theme){
       this.themeColor = theme;
       sessionStorage.setItem('current-theme', theme);

@@ -21,10 +21,18 @@ interface Question {
 
 export class WhiteboardProblemsComponent implements OnInit {
   questionList: Question[];
-  constructor(private questionService: QuestionsService) { }
+  themeColor: string;
+  constructor(private questionService: QuestionsService) {
+    this.themeColor = sessionStorage.getItem('current-theme');
+  }
 
   ngOnInit(): void {
     this.questionList = this.questionService.questions;
   }
-
+  setTheme(theme): void {
+    if (this.themeColor !== theme) {
+      this.themeColor = theme;
+      sessionStorage.setItem('current-theme', theme);
+    }
+  }
 }

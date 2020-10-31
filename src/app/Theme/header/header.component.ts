@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
     this.items = [
       {
-        label: 'Whiteboard Wizards',
+        label: 'WbW',
         icon: '',
         routerLink: ['/']
       },
