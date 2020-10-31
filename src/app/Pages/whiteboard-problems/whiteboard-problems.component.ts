@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../../Services/questions/questions.service';
+import { SelectItem } from 'primeng/api';
 
 interface Question {
   id?: number;
@@ -21,9 +22,28 @@ interface Question {
 
 export class WhiteboardProblemsComponent implements OnInit {
   questionList: Question[];
+  types: SelectItem[];
+  catagories: SelectItem[];
+  difficulties: SelectItem[];
   themeColor: string;
   constructor(private questionService: QuestionsService) {
     this.themeColor = sessionStorage.getItem('current-theme');
+
+    this.types = [
+      { value: 'Arrays', label: 'Arrays' },
+      { value: 'Styling', label: 'Styling' },
+    ];
+
+    this.catagories = [
+      { value: 'JavaScript', label: 'JavaScript' },
+      { value: 'CSS3', label: 'CSS3' },
+    ];
+
+    this.difficulties = [
+      { value: 'Easy', label: 'Easy' },
+      { value: 'Medium', label: 'Medium' },
+      { value: 'Hard', label: 'Hard' },
+    ];
   }
 
   ngOnInit(): void {

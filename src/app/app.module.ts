@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './Pages/home/home.component';
@@ -20,7 +20,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ResourcesComponent } from './Pages/resources/resources.component';
 import { LandingComponent } from './Pages/landing/landing.component';
-
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -38,6 +38,7 @@ import { LandingComponent } from './Pages/landing/landing.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     // primeng
     ButtonModule,
     CardModule,
@@ -45,6 +46,7 @@ import { LandingComponent } from './Pages/landing/landing.component';
     MenubarModule,
     InputTextModule,
     PasswordModule,
+    DropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

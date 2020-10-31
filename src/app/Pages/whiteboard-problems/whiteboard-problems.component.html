@@ -1,19 +1,47 @@
 <div class="{{themeColor}} min-vh-100">
   <app-header></app-header>
   <div class="container mt-5">
-    <p-table [value]="questionList" rowHover="true">
+    <p-table #dt [value]="questionList" rowHover="true"  [globalFilterFields]="['name','type','difficulty','catagory']">
+      <ng-template pTemplate="caption">
+        <div class="d-flex justify-content-between align-items-center">
+          <h3>Whiteboard Prompts</h3>
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+              placeholder="Global Search" />
+          </span>
+        </div>
+      </ng-template>
       <ng-template pTemplate="header">
         <tr>
-          <th>ID</th>
           <th>Name</th>
           <th>Type</th>
           <th>Difficulty</th>
           <th>Catagory</th>
         </tr>
+        <tr>
+          <th>
+            <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'startsWith')"
+              placeholder="Search by Name" class="p-column-filter">
+          </th>
+          <th>
+            <p-dropdown [options]="types" (onChange)="dt.filter($event.value, 'type', 'equals')" styleClass="p-column-filter" placeholder="Filter By Type" [showClear]="true">
+            </p-dropdown>
+          </th>
+          <th>
+            <p-dropdown [options]="difficulties" (onChange)="dt.filter($event.value, 'difficulty', 'equals')" styleClass="p-column-filter"
+              placeholder="Filter By Difficulty" [showClear]="true">
+            </p-dropdown>
+          </th>
+          <th>
+            <p-dropdown [options]="catagories" (onChange)="dt.filter($event.value, 'catagory', 'equals')" styleClass="p-column-filter"
+              placeholder="Filter By Catagory" [showClear]="true">
+            </p-dropdown>
+          </th>
+        </tr>
       </ng-template>
       <ng-template pTemplate="body" let-question>
         <tr>
-          <td>{{question.id}}</td>
           <td>{{question.name}}</td>
           <td>{{question.type}}</td>
           <td>{{question.difficulty}}</td>
