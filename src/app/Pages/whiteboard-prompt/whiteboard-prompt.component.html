@@ -1,0 +1,37 @@
+<div class="{{themeColor}} min-vh-100">
+  <div class="container mt-5">
+    <div class="row mb-1">
+      <div class="col-12">
+        <i [routerLink]="['../../problems']" class="pi pi-arrow-left clickable"></i>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p-tabView>
+          <p-tabPanel header="Instructions">
+            <h4>{{promptQuestion.name}}</h4>
+            <p>{{promptQuestion.content}}</p>
+            <button (click)="displayCode()">displayCode</button>
+          </p-tabPanel>
+          <p-tabPanel header="Example Inputs">
+            <p>{{promptQuestion.input}}</p>
+          </p-tabPanel>
+          <p-tabPanel header="Example Outputs">
+            <p>{{promptQuestion.output}}</p>
+          </p-tabPanel>
+        </p-tabView>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-12">
+        <ngx-codemirror [(ngModel)]="codeContent" autoFocus="true" [options]="{
+          lineNumbers: true,
+          theme: 'material',
+          mode: 'javascript',
+          closeBrackets: true
+        }"></ngx-codemirror>
+      </div>
+    </div>
+  </div>
+</div>

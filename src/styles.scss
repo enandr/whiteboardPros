@@ -5,7 +5,7 @@
 .dark-theme{
   transition: all .15s ease-in-out;
   color:white;
-  background-color: black;
+  background-color: #181818;
   .br{
     border-color: white;
   }
@@ -9232,8 +9232,11 @@ p-togglebutton.ng-dirty.ng-invalid > .p-togglebutton.p-button {
 .light-theme{
   transition: all .15s ease-in-out;
   color: black;
-  background-color: white;
+  background-color: whitesmoke;
   .br{
     border-color: black;
   }
+}
+.clickable{
+  cursor: pointer;
 }

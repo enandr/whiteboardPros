@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../../Services/questions/questions.service';
 import { SelectItem } from 'primeng/api';
+import { Router } from '@angular/router';
 
 interface Question {
   id?: number;
@@ -26,11 +27,14 @@ export class WhiteboardProblemsComponent implements OnInit {
   catagories: SelectItem[];
   difficulties: SelectItem[];
   themeColor: string;
-  constructor(private questionService: QuestionsService) {
+  first = 0;
+
+  rows = 10;
+  constructor(private questionService: QuestionsService, private router: Router) {
     this.themeColor = sessionStorage.getItem('current-theme');
 
     this.types = [
-      { value: 'Arrays', label: 'Arrays' },
+      { value: 'Array', label: 'Array' },
       { value: 'Styling', label: 'Styling' },
     ];
 
@@ -47,12 +51,42 @@ export class WhiteboardProblemsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.questionList = this.questionService.questions;
+    this.questionList = this.questionService.getQuestions();
   }
   setTheme(theme): void {
     if (this.themeColor !== theme) {
       this.themeColor = theme;
       sessionStorage.setItem('current-theme', theme);
     }
+  }
+  next(): void {
+    this.first = this.first + this.rows;
+  }
+
+  prev(): void {
+    this.first = this.first - this.rows;
+  }
+
+  reset(): void {
+    this.first = 0;
+  }
+
+  isLastPage(): boolean {
+    return this.questionList ? this.first === (this.questionList.length - this.rows) : true;
+  }
+
+  isFirstPage(): boolean {
+    return this.questionList ? this.first === 0 : true;
+  }
+
+  navToQuestion(question): void {
+    let tempName = question.name;
+    tempName = tempName.replaceAll(' ', '_');
+    this.router.navigate(['/whiteboard/problems', tempName]);
+  }
+
+  makeUrlFriendly(questionName): string {
+    questionName = questionName.replaceAll(' ', '_');
+    return questionName;
   }
 }

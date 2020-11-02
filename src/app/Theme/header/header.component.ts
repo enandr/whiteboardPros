@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,23 +9,33 @@ import { MenuItem } from 'primeng/api';
 export class HeaderComponent implements OnInit {
 
   items: MenuItem[];
+  // navigationSubscription: any;
+  themeColor = 'dark-theme dark-theme-primeng';
+  constructor(private router: Router) {
 
-  constructor() {
 
+
+    const savedTheme = sessionStorage.getItem('current-theme');
+    if (savedTheme) {
+      this.themeColor = savedTheme;
+    }
     this.items = [
       {
         label: 'WbW',
-        icon: '',
-        routerLink: ['/']
-      },
-      {
-        label: 'Home',
         icon: '',
         routerLink: ['/home']
       },
       {
         label: 'Whiteboards',
-        routerLink: ['/whiteboard/problems']
+        items: [
+          {
+          label: 'Problems',
+          routerLink: ['/whiteboard'],
+          },
+          {
+          label: 'Strategies'
+          }
+        ]
       },
       {
         label: 'Interviews',
@@ -36,15 +46,11 @@ export class HeaderComponent implements OnInit {
         routerLink: ['/resources'],
         items: [{
           label: 'Coding',
-          // icon: 'pi pi-fw pi-plus',
           items: [
             { label: 'JavaScript' },
             { label: 'TypeScript' },
             { label: 'React' },
             { label: 'Angular' },
-            // { label: 'TypeScript' },
-            // { label: 'TypeScript' },
-            // { label: 'TypeScript' },
           ]
           },
           {
@@ -62,10 +68,29 @@ export class HeaderComponent implements OnInit {
         label: 'Our Great Wizards',
         routerLink: ['/greatwizards']
       },
+      {
+        label: 'Theme',
+        items: [
+          { label: 'Light', command: () => {this.setTheme('light-theme light-theme-primeng');} },
+          { label: 'Dark', command: () => { this.setTheme('dark-theme dark-theme-primeng'); }  }
+        ]
+      }
     ];
   }
 
   ngOnInit(): void {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => {
+      return false;
+    };
+  }
+
+  setTheme(theme): void {
+    if (this.themeColor !== theme) {
+      this.themeColor = theme;
+      sessionStorage.setItem('current-theme', theme);
+    }
+    console.log('dfas');
+    this.router.navigateByUrl(this.router.url);
   }
 
 }

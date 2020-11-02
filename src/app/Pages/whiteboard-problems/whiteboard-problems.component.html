@@ -1,7 +1,7 @@
 <div class="{{themeColor}} min-vh-100">
-  <app-header></app-header>
   <div class="container mt-5">
-    <p-table #dt [value]="questionList" rowHover="true"  [globalFilterFields]="['name','type','difficulty','catagory']">
+    <p-table #dt [value]="questionList" rowHover="true"  [globalFilterFields]="['name','type','difficulty','catagory']" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+        currentPageReportTemplate="Casting [ {first} - {last} ] of {totalRecords} spells" [rowsPerPageOptions]="[10,25,50]">
       <ng-template pTemplate="caption">
         <div class="d-flex justify-content-between align-items-center">
           <h3>Whiteboard Prompts</h3>
@@ -21,7 +21,7 @@
         </tr>
         <tr>
           <th>
-            <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'startsWith')"
+            <input pInputText type="text" (input)="dt.filter($event.target.value, 'name', 'contains')"
               placeholder="Search by Name" class="p-column-filter">
           </th>
           <th>
@@ -41,7 +41,7 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-question>
-        <tr>
+        <tr class="clickable" routerLink="../prompt/{{question.id}}">
           <td>{{question.name}}</td>
           <td>{{question.type}}</td>
           <td>{{question.difficulty}}</td>

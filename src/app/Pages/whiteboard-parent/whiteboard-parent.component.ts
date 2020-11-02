@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-page-not-found',
-  templateUrl: './page-not-found.component.html',
-  styleUrls: ['./page-not-found.component.scss']
+  selector: 'app-whiteboard-parent',
+  templateUrl: './whiteboard-parent.component.html',
+  styleUrls: ['./whiteboard-parent.component.scss']
 })
-export class PageNotFoundComponent implements OnInit {
+export class WhiteboardParentComponent implements OnInit {
   themeColor: string;
   constructor() {
     this.themeColor = sessionStorage.getItem('current-theme');
@@ -13,12 +13,10 @@ export class PageNotFoundComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   setTheme(theme): void {
     if (this.themeColor !== theme) {
       this.themeColor = theme;
       sessionStorage.setItem('current-theme', theme);
     }
   }
-
 }
